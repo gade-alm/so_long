@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:33:01 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/11 12:51:12 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/11 22:26:32 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,12 @@ void	player_position(t_win *win)
 	{
 		y = -1;
 		while (win->map[x][++y])
+		{
 			if (win->map[x][y] == 'P')
 			{
 			win->ply_x = y * 48;
 			win->ply_y = x * 48;
 			}
+		}
 	}
 }
