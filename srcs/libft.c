@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 16:20:40 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/09/30 12:21:05 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/12 15:36:41 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,24 @@ char	*ft_itoa(int n)
 		nbr = nbr / 10;
 	}
 	return (str);
+}
+
+char	*ft_strdup(char *s1)
+{
+	char	*ptr;
+	int		a;
+	int		len;
+
+	a = 0;
+	len = ft_strlen(s1);
+	ptr = (char *)malloc(sizeof(*s1) * (len + 1));
+	if (!ptr)
+		return (NULL);
+	while (a < len)
+	{
+		ptr[a] = s1[a];
+		a++;
+	}
+	ptr[a] = '\0';
+	return (ptr);
 }

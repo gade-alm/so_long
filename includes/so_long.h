@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:34:12 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/11 13:20:33 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:13:15 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,9 @@ int		letter_counter(t_win	*win);
 void	print_error(char *str, int i);
 void	put_image(t_win	*win);
 void	collect_check(t_win	*win);
-int	path_checker(t_win *win, int x, int y);
+char	**map_copy(t_win *win, int y);
 void	player_position(t_win *win);
+void	check_path(char **copy, int x, int y);
 
 //Input functions
 int		close_keys(int keycode, t_win *win);
@@ -100,6 +101,8 @@ int		move_checker(t_win *win, int keycode);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strlen(char *str);
+char	*ft_strcpy(char *dst, const char *src);
+char	*ft_strdup(char *s1);
 char	*ft_itoa(int n);
 t_win	*wincall(void);
 

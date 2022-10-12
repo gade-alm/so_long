@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 17:06:38 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/11 22:01:24 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/12 12:47:29 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	window_creator(t_win *win)
 {
 	win = wincall();
 	win->mlx = mlx_init();
-	// path_checker(win, win->ply_x, win->ply_y);
+	map_copy(win);
 	win->win = mlx_new_window(win->mlx, win->win_x * 48, \
 	win->win_y * 48, "My Game");
 	put_image(wincall());
