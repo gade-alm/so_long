@@ -6,7 +6,7 @@
 /*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:34:12 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/12 16:13:15 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/13 13:53:56 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int		letter_counter(t_win	*win);
 void	print_error(char *str, int i);
 void	put_image(t_win	*win);
 void	collect_check(t_win	*win);
-char	**map_copy(t_win *win, int y);
+char	**map_copy(t_win *win);
 void	player_position(t_win *win);
 void	check_path(char **copy, int x, int y);
 
