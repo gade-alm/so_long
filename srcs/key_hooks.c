@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:33:01 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/11 22:26:32 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/13 16:51:13 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,8 @@
 
 int	close_keys(int keycode, t_win *win)
 {
-	char		*str;
-	static int	i = 0;
-
 	if (keycode == 97 || keycode == 100 || keycode == 115 || keycode == 119)
-	{
-		str = ft_itoa(i++);
-		mlx_put_image_to_window(win->mlx, win->win, win->img[0], 0, 0);
-		mlx_string_put(win->mlx, win->win, 10, 10, 0xFFFFFF, str);
-		free(str);
 		move_checker(win, keycode);
-	}
 	if (keycode == 65307)
 	{
 		print_error("You closed the game.", 0);
@@ -34,6 +25,13 @@ int	close_keys(int keycode, t_win *win)
 
 int	movement_keys(int keycode, t_win *win)
 {
+	char 	*str;
+	static int i = 0;
+
+	str = ft_itoa(++i);
+	mlx_put_image_to_window(win->mlx, win->win, win->img[0], 0, 0);
+	mlx_string_put(win->mlx, win->win, 10, 10, 0xFFFFFF, str);
+	free(str);
 	mlx_put_image_to_window(win->mlx, win->win, win->img[5], \
 	win->ply_x, win->ply_y);
 	win->ply_x += ((keycode == 100) - (keycode == 97)) * 48;
