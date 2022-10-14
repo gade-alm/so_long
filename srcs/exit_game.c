@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:38:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/11 22:03:01 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/14 18:49:23 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,12 @@ int		exit_game(t_win *win)
 		free(win->map);
 	}
 	i = 0;
-	while (i < 9)
-		mlx_destroy_image(win->mlx, win->img[i++]);
-	free(win->img);
+	if (win->img)
+	{	
+		while (i < 9)
+			mlx_destroy_image(win->mlx, win->img[i++]);
+		free(win->img);
+	}
 	if (win->win)
 		mlx_destroy_window(win->mlx, win->win);
 	if (win->mlx)

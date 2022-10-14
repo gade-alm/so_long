@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:34:12 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/13 14:10:29 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/14 18:26:57 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,11 @@ int		letter_counter(t_win	*win);
 void	print_error(char *str, int i);
 void	put_image(t_win	*win);
 void	collect_check(t_win	*win);
-char	**map_copy(t_win *win);
+char	**map_copy(char	**copy);
 void	player_position(t_win *win);
 void	check_path(char **copy, int x, int y);
+void	free_map(char	**map);
+void	valid_path(char	**copy);
 
 //Input functions
 int		close_keys(int keycode, t_win *win);
