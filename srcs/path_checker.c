@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:42:08 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/13 14:08:44 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/14 15:46:42 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,28 @@ char	**map_copy(t_win *win)
 void	check_path(char **copy, int x, int y)
 {
 	t_win *win;
-	x /= 48;
-	y /= 48;
 
 	win = wincall();
 	copy[x][y] = 'P';
-	if ((copy[x + 1][y] == 'E' && win->c_num > 0 ) || copy[x + 1][y] == '0')
+	if (copy[x + 1][y] == 'C' || copy[x + 1][y] == '0')
 		check_path(copy, x + 1, y);
-	if ((copy[x - 1][y] == 'E' && win->c_num > 0 ) || copy[x - 1][y] == '0')
+	if (copy[x - 1][y] == 'C' || copy[x - 1][y] == '0')
 		check_path(copy, x - 1, y);
-	if ((copy[x][y + 1] == 'E' && win->c_num > 0 ) || copy[x][y + 1] == '0')
+	if (copy[x][y + 1] == 'C' || copy[x][y + 1] == '0')
 		check_path(copy, x, y + 1);
-	if ((copy[x][y - 1] == 'E' && win->c_num > 0 ) || copy[x][y - 1] == '0')
+	if (copy[x][y - 1] == 'C' || copy[x][y - 1] == '0')
 		check_path(copy, x, y - 1);
 }
 
-// void	valid_path(char	**copy)
-// {
-// 	char	*temp;
+void	valid_path(char	**copy)
+{
+	char	**temp;
 
-// 	temp = map_copy(copy);
-// 	check_path(temp, win->ply_x, win->ply_y);
+	temp = map_copy(copy);
+	check_path(temp, win->ply_x / 48, win->ply_y / 48);
 	
-// }
+	if (temp)
+		free (temp);
+	
+	
+}
