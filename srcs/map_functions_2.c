@@ -6,7 +6,7 @@
 /*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 18:56:47 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/15 11:09:42 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/16 16:45:45 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	letter_counter(t_win	*win)
 	int	y;
 
 	x = -1;
+	wincall()->win_x = ft_strlen(win->map[0]);
 	while (win->map[++x])
 	{
 		y = -1;

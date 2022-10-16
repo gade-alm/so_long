@@ -6,7 +6,7 @@
 /*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:42:08 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/16 16:13:10 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/16 16:31:18 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	**map_copy(char	**copy)
 
 	win = wincall();
 	temp = malloc(sizeof(char *) * (win->win_y + 1));
+	if (!temp)
+		print_error("Can't allocate copy", 1);
 	i = -1;
 	while (++i < win->win_y)
 	{
@@ -52,13 +54,13 @@ void	valid_path(char	**copy)
 
 	temp = map_copy(copy);
 	int i;
-	for (i = 0; i < 8; i++)
+	for (i = 0; i < wincall()->win_y; i++)
 	{
 		printf("%s\n", temp[i]);
 	}
 	check_path(temp, wincall()->ply_x / 48, wincall()->ply_y / 48);
 	printf("new map:\n");
-	for (i = 0; i < 8; i++)
+	for (i = 0; i < wincall()->win_y; i++)
 	{
 		printf("%s\n", temp[i]);
 	}

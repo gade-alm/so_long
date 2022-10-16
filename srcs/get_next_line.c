@@ -6,7 +6,7 @@
 /*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 14:45:25 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/09/14 19:50:43 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/16 16:40:32 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ char	*get_next_line(int fd)
 			line = ft_get_line(buffer, line);
 		if (re < 1 || is_newline(buffer))
 			break ;
-		wincall()->win_x = ft_strlen(line) + 1;
 	}
 	return (line);
 }
