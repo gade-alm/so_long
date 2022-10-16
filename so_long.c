@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 18:33:00 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/14 18:46:32 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/15 11:10:04 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,5 @@ int main(int argc, char **argv)
 	open_map(argv[1]);
 	letter_counter(wincall());
 	player_position(wincall());
-	printf("%i\n", (wincall()->map != NULL));
 	window_creator(wincall());
 }

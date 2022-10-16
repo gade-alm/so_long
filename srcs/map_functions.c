@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 17:06:38 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/14 18:47:29 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/15 11:09:53 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ int	letter_checker(char *map)
 
 void	window_creator(t_win *win)
 {
-	printf("%i\n", (win->map != 0));
 	valid_path(win->map);
 	win->mlx = mlx_init();
 	win->win = mlx_new_window(win->mlx, win->win_x * 48, \

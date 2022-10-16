@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_functions_2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 18:56:47 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/14 18:45:31 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/15 11:09:42 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,6 @@ void	collect_check(t_win	*win)
 	{
 			win->map[x][y] = '0';
 			win->c_num--;
-		printf("%i\n", win->c_num);
 	}
 	if (win->map[x][y] == 'E' && win->c_num == 0)
 		print_error("You win! :)", 0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:42:08 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/14 18:48:48 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/16 16:13:10 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,15 @@ char	**map_copy(char	**copy)
 
 void	check_path(char **copy, int x, int y)
 {
-	copy[x][y] = 'P';
-	if (copy[x + 1][y] == 'C' || copy[x + 1][y] == '0')
-		check_path(copy, x + 1, y);
-	if (copy[x - 1][y] == 'C' || copy[x - 1][y] == '0')
-		check_path(copy, x - 1, y);
-	if (copy[x][y + 1] == 'C' || copy[x][y + 1] == '0')
+	copy[y][x] = 'P';
+	if (copy[y + 1][x] == 'C' || copy[y + 1][x] == '0')
 		check_path(copy, x, y + 1);
-	if (copy[x][y - 1] == 'C' || copy[x][y - 1] == '0')
+	if (y > 0 && (copy[y - 1][x] == 'C' || copy[y - 1][x] == '0'))
 		check_path(copy, x, y - 1);
+	if (copy[y][x + 1] == 'C' || copy[y][x + 1] == '0')
+		check_path(copy, x + 1, y);
+	if (copy[y][x - 1] == 'C' || copy[y][x - 1] == '0')
+		check_path(copy, x - 1, y);
 }
 
 void	valid_path(char	**copy)
@@ -51,7 +51,17 @@ void	valid_path(char	**copy)
 	int		y;
 
 	temp = map_copy(copy);
+	int i;
+	for (i = 0; i < 8; i++)
+	{
+		printf("%s\n", temp[i]);
+	}
 	check_path(temp, wincall()->ply_x / 48, wincall()->ply_y / 48);
+	printf("new map:\n");
+	for (i = 0; i < 8; i++)
+	{
+		printf("%s\n", temp[i]);
+	}
 	y = -1;
 	while (temp[++y])
 	{
