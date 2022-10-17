@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 17:06:38 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/17 11:08:52 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/17 11:54:41 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	letter_checker(char *map)
 
 void	window_creator(t_win *win)
 {
-	valid_path(win->map);
+	valid_path(win->map, 0, 0);
 	win->mlx = mlx_init();
 	win->win = mlx_new_window(win->mlx, win->win_x * 48, \
 	win->win_y * 48, "My Game");

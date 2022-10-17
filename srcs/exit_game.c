@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:38:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/17 11:16:39 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/17 12:32:37 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	print_error(char *str, int i)
 {
 	if (!i)
-		printf("%s\n", str);
+		ft_printf("%s\n", str);
 	else
-		printf("Error\n%s\n", str);
+		ft_printf("Error\n%s\n", str);
 	exit_game(wincall());
 }
 

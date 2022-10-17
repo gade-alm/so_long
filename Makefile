@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+         #
+#    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 16:54:55 by gade-alm          #+#    #+#              #
-#    Updated: 2022/10/11 13:42:45 by gade-alm         ###   ########.fr        #
+#    Updated: 2022/10/17 13:07:27 by gabriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,24 +32,31 @@ RM		= rm -rf
 
 MLX		= mlx_linux/libmlx_Linux.a
 
+PRINTF	= libs/ft_printf/libftprintf.a
+
 all: $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
-$(NAME): $(MLX) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+$(NAME): $(MLX) $(PRINTF) $(OBJS) 
+	$(CC) $(CFLAGS) $(OBJS) -Llibs/ft_printf -l:libftprintf.a -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
 $(MLX):
 	make -C mlx_linux
 
+$(PRINTF):
+	make -C libs/ft_printf
+
 clean: 
 	$(RM) $(OBJS)
 	make clean -C mlx_linux
+	make clean -C libs/ft_printf
 	$(RM) a.out
 
 fclean: clean
 		$(RM) $(NAME) $(OBJS)
+		make fclean -C libs/ft_printf
 
 re: fclean all
 
