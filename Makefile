@@ -6,7 +6,7 @@
 #    By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/28 16:54:55 by gade-alm          #+#    #+#              #
-#    Updated: 2022/10/17 13:07:27 by gabriel          ###   ########.fr        #
+#    Updated: 2022/10/17 13:11:56 by gabriel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ all: $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I/usr/include -Imlx_linux -O3 -c $< -o $@
-
+	
 $(NAME): $(MLX) $(PRINTF) $(OBJS) 
 	$(CC) $(CFLAGS) $(OBJS) -Llibs/ft_printf -l:libftprintf.a -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
