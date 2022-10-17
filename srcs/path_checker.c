@@ -6,7 +6,7 @@
 /*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:42:08 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/17 11:55:19 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/17 13:55:05 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void	valid_path(char	**copy, int x, int y)
 				print_error("Check map path", 1);
 			}
 			if (tmp[y][x] == 'E' && (tmp[y + 1][x] == 'P' || \
-			tmp[y - 1][x] == 'P' \
-			|| tmp[y][x + 1] == 'P' || tmp[y][x - 1] == 'P'))
+			tmp[y - 1][x] == 'P' || tmp[y][x + 1] == 'P' || \
+			tmp[y][x - 1] == 'P'))
 			{
 				free_map(tmp);
 				return ;

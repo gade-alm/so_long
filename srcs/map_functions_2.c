@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_functions_2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 18:56:47 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/16 16:45:45 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/17 13:55:26 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
