@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 17:06:38 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/16 16:44:18 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/17 11:08:52 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	open_map(char *map)
 
 	fd = open(map, O_RDONLY);
 	if (fd == -1)
-		exit_game(wincall());
+		print_error("check map file", 1);
 	(wincall())->map = map_to_str(NULL, fd, 0);
 }
 

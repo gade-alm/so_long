@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:42:08 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/16 16:31:18 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/17 11:18:12 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**map_copy(char	**copy)
 	{
 		temp[i] = ft_strdup(copy[i]);
 		if (!temp[i])
-			print_error("error on copy malloc", 1);
+			print_error("Error on copy malloc", 1);
 	}
 	temp[i] = NULL;
 	return (temp);
@@ -53,30 +53,20 @@ void	valid_path(char	**copy)
 	int		y;
 
 	temp = map_copy(copy);
-	int i;
-	for (i = 0; i < wincall()->win_y; i++)
-	{
-		printf("%s\n", temp[i]);
-	}
 	check_path(temp, wincall()->ply_x / 48, wincall()->ply_y / 48);
-	printf("new map:\n");
-	for (i = 0; i < wincall()->win_y; i++)
-	{
-		printf("%s\n", temp[i]);
-	}
 	y = -1;
 	while (temp[++y])
 	{
 		x = -1;
-		while(temp[y][++x])
+		while (temp[y][++x])
 		{
 			if (temp[y][x] == 'C')
 			{
 				free_map(temp);
 				print_error("rever", 1);
 			}
-			if (temp[y][x] == 'E' && (temp[y + 1][x] == 'P' || temp[y - 1][x] == 'P'\
-			|| temp[y][x + 1] == 'P' || temp[y][x - 1] == 'P'))
+			if (temp[y][x] == 'E' && (temp[y + 1][x] == 'P' || \
+			temp[y - 1][x] == 'P' || temp[y][x + 1] == 'P' || temp[y][x - 1] == 'P'))
 			{
 				free_map(temp);
 				return ;
@@ -87,7 +77,7 @@ void	valid_path(char	**copy)
 
 void	free_map(char	**map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (map)

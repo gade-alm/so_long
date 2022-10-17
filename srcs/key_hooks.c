@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:33:01 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/13 16:51:13 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/17 11:17:00 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	close_keys(int keycode, t_win *win)
 
 int	movement_keys(int keycode, t_win *win)
 {
-	char 	*str;
-	static int i = 0;
+	char		*str;
+	static int	i = 0;
 
 	str = ft_itoa(++i);
 	mlx_put_image_to_window(win->mlx, win->win, win->img[0], 0, 0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:38:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/14 18:49:23 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:16:39 by gabriel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_error(char *str, int i)
 	exit_game(wincall());
 }
 
-int		exit_game(t_win *win)
+int	exit_game(t_win *win)
 {
 	int	i;
 
