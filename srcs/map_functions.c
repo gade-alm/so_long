@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   map_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 17:06:38 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/17 13:56:39 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/18 10:38:49 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-//This function gnl the file than transfers it to my map, so I can read it in
-//other functions and initalize the map sprites.
 char	**map_to_str(char **map, int fd, int i)
 {
 	char	*str;
@@ -39,17 +37,15 @@ void	open_map(char *map)
 
 	fd = open(map, O_RDONLY);
 	if (fd == -1)
-		print_error("check map file", 1);
+		print_error("Check name of the map", 1);
 	(wincall())->map = map_to_str(NULL, fd, 0);
 }
 
-//This function checks the if the format of the file is .ber so it is a valid
-//map used in this project ****(TALVEZ MUDAR DE LOCAL)***
 int	format_checker(char *str)
 {	
 	if (!ft_strncmp(ft_strrchr(str, '.'), ".ber", 5))
 		return (1);
-	printf("Check map format!");
+	print_error("Check format of the map", 1);
 	return (0);
 }
 
