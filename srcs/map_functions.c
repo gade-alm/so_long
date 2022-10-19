@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 17:06:38 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/19 16:41:06 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:08:30 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ char	**map_to_str(char **map, int fd, int i)
 	if (!map)
 		exit_game(wincall()->win);
 	map[i] = str;
-	if (!map[0])
-		print_error("Check if it's a valid file type or if it's empty", 1);
 	return (map);
 }
 
@@ -37,6 +35,12 @@ void	open_map(char *map)
 {
 	int		fd;
 
+	fd = open(map, O_DIRECTORY);
+	if (fd != -1)
+	{
+		close(fd);
+		print_error("It's a directory type", 1);
+	}
 	fd = open(map, O_RDONLY);
 	if (fd == -1)
 		print_error("Check name of the map", 1);
@@ -63,7 +67,7 @@ int	letter_checker(char *map)
 	while (map[++i])
 	{
 		if (map[i] != '0' && map[i] != '1' && map[i] != 'P' && map[i] != 'C' \
-		&& map[i] != 'E')
+		&& map[i] != 'E' && map[i] != 'X')
 			print_error("Wrong letter on the map", 1);
 	}
 	return (0);

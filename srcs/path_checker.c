@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:42:08 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/17 13:55:05 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/19 18:04:56 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	check_path(char **copy, int x, int y)
 	copy[y][x] = 'P';
 	if (copy[y + 1][x] == 'C' || copy[y + 1][x] == '0')
 		check_path(copy, x, y + 1);
-	if (y > 0 && (copy[y - 1][x] == 'C' || copy[y - 1][x] == '0'))
+	if (copy[y - 1][x] == 'C' || copy[y - 1][x] == '0')
 		check_path(copy, x, y - 1);
 	if (copy[y][x + 1] == 'C' || copy[y][x + 1] == '0')
 		check_path(copy, x + 1, y);
@@ -63,15 +63,16 @@ void	valid_path(char	**copy, int x, int y)
 				free_map(tmp);
 				print_error("Check map path", 1);
 			}
-			if (tmp[y][x] == 'E' && (tmp[y + 1][x] == 'P' || \
-			tmp[y - 1][x] == 'P' || tmp[y][x + 1] == 'P' || \
-			tmp[y][x - 1] == 'P'))
+			if (tmp[y][x] == 'E' && (tmp[y + 1][x] != 'P' || \
+			tmp[y - 1][x] != 'P' || tmp[y][x + 1] != 'P' || \
+			tmp[y][x - 1] != 'P'))
 			{
 				free_map(tmp);
-				return ;
+				print_error("Check map path", 1);
 			}
 		}
 	}
+	free_map(tmp);
 }
 
 void	free_map(char	**map)

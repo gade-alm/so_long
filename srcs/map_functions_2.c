@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_functions_2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 18:56:47 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/18 10:57:15 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/19 17:51:58 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	load_images(t_win	*win)
 	win->img[5] = mlx_xpm_file_to_image(win->mlx, "imgs/floor.xpm", &i, &j);
 	win->img[6] = mlx_xpm_file_to_image(win->mlx, "imgs/cat.xpm", &i, &j);
 	win->img[7] = mlx_xpm_file_to_image(win->mlx, "imgs/c_exit.xpm", &i, &j);
-	win->img[8] = mlx_xpm_file_to_image(win->mlx, "imgs/c_exit.xpm", &i, &j);
+	win->img[8] = mlx_xpm_file_to_image(win->mlx, "imgs/enemy.xpm", &i, &j);
 }
 
 void	put_image(t_win	*win)
@@ -75,7 +75,7 @@ void	put_image(t_win	*win)
 			mlx_put_image_to_window(win->mlx, win->win, \
 			win->img[(win->map[x][y] == 'P') * 4 + \
 			(win->map[x][y] == '0') * 5 + (win->map[x][y] == 'C') * 6 \
-			+ (win->map[x][y] == 'E') * 7] \
+			+ (win->map[x][y] == 'E') * 7 + (win->map[x][y] == 'X') * 8] \
 			, y * 48, x * 48);
 		}
 	}
@@ -114,6 +114,10 @@ void	collect_check(t_win	*win)
 	{
 			win->map[x][y] = '0';
 			win->c_num--;
+	}
+	if (win->map[x][y] == 'X')
+	{
+		print_error("You fell on a hole", 0);
 	}
 	if (win->map[x][y] == 'E' && win->c_num == 0)
 		print_error("You win! :)", 0);
