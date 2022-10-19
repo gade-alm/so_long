@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:38:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/17 13:56:10 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/19 16:27:03 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ void	print_error(char *str, int i)
 	else
 		ft_printf("Error\n%s\n", str);
 	exit_game(wincall());
+}
+
+int	button_exit(void)
+{
+	print_error("You closed the game.", 0);
+	return (0);
 }
 
 int	exit_game(t_win *win)

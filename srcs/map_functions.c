@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 17:06:38 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/18 10:38:49 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/19 16:41:06 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	**map_to_str(char **map, int fd, int i)
 	if (!map)
 		exit_game(wincall()->win);
 	map[i] = str;
+	if (!map[0])
+		print_error("Check if it's a valid file type or if it's empty", 1);
 	return (map);
 }
 
@@ -75,6 +77,6 @@ void	window_creator(t_win *win)
 	win->win_y * 48, "My Game");
 	put_image(wincall());
 	mlx_hook(win->win, 02, (1L << 0), close_keys, win);
-	mlx_hook(win->win, 17, (1L << 2), exit_game, win);
+	mlx_hook(win->win, 17, (1L << 2), button_exit, win);
 	mlx_loop(win->mlx);
 }
