@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 17:06:38 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/19 18:08:30 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:15:00 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ void	window_creator(t_win *win)
 	put_image(wincall());
 	mlx_hook(win->win, 02, (1L << 0), close_keys, win);
 	mlx_hook(win->win, 17, (1L << 2), button_exit, win);
+	mlx_loop_hook(win->mlx, &render_sprite, (void *)win);
 	mlx_loop(win->mlx);
 }

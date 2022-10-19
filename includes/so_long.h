@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 18:34:12 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/19 16:28:35 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:14:49 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	open_map(char *map);
 void	print_error(char *str, int i);
 void	put_image(t_win	*win);
 void	player_position(t_win *win);
+int		render_sprite(void *rend);
 void	valid_path(char	**copy, int x, int y);
 void	window_creator(t_win *win);
 
