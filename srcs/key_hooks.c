@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabriel <gabriel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:33:01 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/17 11:17:00 by gabriel          ###   ########.fr       */
+/*   Updated: 2022/10/19 18:35:52 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +62,8 @@ void	player_position(t_win *win)
 		}
 	}
 }
+
+// int	render_sprite(t_win	*win)
+// {
+	
+// }

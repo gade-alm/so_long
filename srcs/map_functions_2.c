@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 18:56:47 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/19 17:51:58 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:33:59 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	load_images(t_win	*win)
 
 	i = 48;
 	j = i;
-	win->img = malloc(9 * sizeof(void *));
+	win->img = malloc(11 * sizeof(void *));
 	if (!win->img)
 		exit_game(wincall());
 	win->img[0] = mlx_xpm_file_to_image(win->mlx, "imgs/wall.xpm", &i, &j);
@@ -58,6 +58,8 @@ static void	load_images(t_win	*win)
 	win->img[6] = mlx_xpm_file_to_image(win->mlx, "imgs/cat.xpm", &i, &j);
 	win->img[7] = mlx_xpm_file_to_image(win->mlx, "imgs/c_exit.xpm", &i, &j);
 	win->img[8] = mlx_xpm_file_to_image(win->mlx, "imgs/enemy.xpm", &i, &j);
+	win->img[9] = mlx_xpm_file_to_image(win->mlx, "imgs/enemy2.xpm", &i, &j);
+	win->img[10] = mlx_xpm_file_to_image(win->mlx, "imgs/enemy3.xpm", &i, &j);
 }
 
 void	put_image(t_win	*win)
@@ -117,7 +119,7 @@ void	collect_check(t_win	*win)
 	}
 	if (win->map[x][y] == 'X')
 	{
-		print_error("You fell on a hole", 0);
+		print_error("THE ROBOT EXPLODED YOU", 0);
 	}
 	if (win->map[x][y] == 'E' && win->c_num == 0)
 		print_error("You win! :)", 0);

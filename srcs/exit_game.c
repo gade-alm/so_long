@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:38:04 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/19 16:27:03 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:34:18 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	exit_game(t_win *win)
 	i = 0;
 	if (win->img)
 	{	
-		while (i < 9)
+		while (i < 11)
 			mlx_destroy_image(win->mlx, win->img[i++]);
 		free(win->img);
 	}
