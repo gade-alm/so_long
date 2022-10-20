@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:42:08 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/19 18:04:56 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/20 10:35:02 by gabrieldeal      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,11 @@ void	valid_path(char	**copy, int x, int y)
 	char	**tmp;
 
 	tmp = map_copy(copy);
+	for (int i = 0; i < wincall()->win_y; i++)
+		printf("%s\n",tmp[i]);
 	check_path(tmp, wincall()->ply_x / 48, wincall()->ply_y / 48);
+	for (int i = 0; i < wincall()->win_y; i++)
+		printf("%s\n",tmp[i]);
 	y = -1;
 	while (tmp[++y])
 	{
@@ -63,9 +67,9 @@ void	valid_path(char	**copy, int x, int y)
 				free_map(tmp);
 				print_error("Check map path", 1);
 			}
-			if (tmp[y][x] == 'E' && (tmp[y + 1][x] != 'P' || \
-			tmp[y - 1][x] != 'P' || tmp[y][x + 1] != 'P' || \
-			tmp[y][x - 1] != 'P'))
+			if (tmp[y][x] == 'E' && (!(tmp[y + 1][x] == 'P' || \
+			tmp[y - 1][x] == 'P' || tmp[y][x + 1] == 'P' || \
+			tmp[y][x - 1] == 'P')))
 			{
 				free_map(tmp);
 				print_error("Check map path", 1);
