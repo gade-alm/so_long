@@ -6,7 +6,7 @@
 /*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 10:33:01 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/19 19:17:35 by gade-alm         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:20:19 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ void	player_position(t_win *win)
 
 int	render_sprite(void *rend)
 {
-	t_win *win;
+	t_win		*win;
 	static int	i = 8;
-	int	x;
-	int	y;
+	int			x;
+	int			y;
 
 	win = (t_win *)rend;
 	x = -1;
@@ -78,8 +78,8 @@ int	render_sprite(void *rend)
 		while (win->map[x][++y])
 		{
 			if (win->map[x][y] == 'X')
-				mlx_put_image_to_window(win->mlx, win->win, win->img[i],\
-				 y * 48, x  * 48);
+				mlx_put_image_to_window (win->mlx, win->win, win->img[i], \
+				y * 48, x * 48);
 		}
 	}
 	i++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   path_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabrieldealmeidatorres <gabrieldealmeid    +#+  +:+       +#+        */
+/*   By: gade-alm <gade-alm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:42:08 by gade-alm          #+#    #+#             */
-/*   Updated: 2022/10/20 10:35:02 by gabrieldeal      ###   ########.fr       */
+/*   Updated: 2022/10/21 12:18:24 by gade-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,7 @@ void	valid_path(char	**copy, int x, int y)
 	char	**tmp;
 
 	tmp = map_copy(copy);
-	for (int i = 0; i < wincall()->win_y; i++)
-		printf("%s\n",tmp[i]);
 	check_path(tmp, wincall()->ply_x / 48, wincall()->ply_y / 48);
-	for (int i = 0; i < wincall()->win_y; i++)
-		printf("%s\n",tmp[i]);
 	y = -1;
 	while (tmp[++y])
 	{
